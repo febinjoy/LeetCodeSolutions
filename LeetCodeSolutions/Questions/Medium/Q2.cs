@@ -16,7 +16,9 @@ namespace LeetCodeSolutions.Questions.Medium
         {
             public int val;
             public ListNode next;
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
             public ListNode(int val = 0, ListNode next = null)
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
             {
                 this.val = val;
                 this.next = next;
