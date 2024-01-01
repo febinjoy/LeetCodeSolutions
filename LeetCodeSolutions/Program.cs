@@ -12,6 +12,10 @@ namespace LeetCodeSolutions
         {
             // Easy
             ExecuteQuestion(2331);
+            ExecuteQuestion(58);
+            ExecuteQuestion(26);
+            ExecuteQuestion(9);
+            ExecuteQuestion(35);
 
             //Medium
 
