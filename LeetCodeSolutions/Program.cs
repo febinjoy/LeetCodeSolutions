@@ -19,8 +19,10 @@ namespace LeetCodeSolutions
             ExecuteQuestion(2974);
 
             //Medium
+            ExecuteQuestion(2);
 
             // Hard
+
         }
 
         private static void ExecuteQuestion(int questionNumber)
