@@ -11,6 +11,7 @@ namespace LeetCodeSolutions
         static void Main(string[] args)
         {
             // Easy
+            ExecuteQuestion(2331);
 
             //Medium
 
