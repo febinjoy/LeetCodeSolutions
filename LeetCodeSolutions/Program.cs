@@ -18,7 +18,7 @@ namespace LeetCodeSolutions
             ExecuteQuestion(35);
             ExecuteQuestion(2974);
 
-            //Medium
+            // Medium
             ExecuteQuestion(2);
 
             // Hard
