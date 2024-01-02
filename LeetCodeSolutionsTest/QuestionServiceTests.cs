@@ -1,4 +1,6 @@
 using LeetCodeSolutions;
+using LeetCodeSolutions.Classes;
+using LeetCodeSolutions.Enums;
 using LeetCodeSolutions.Exceptions;
 using LeetCodeSolutions.Interfaces;
 using LeetCodeSolutions.Questions.Easy;
@@ -11,11 +13,17 @@ namespace LeetCodeSolutionsTest
     {
         private QuestionService questionService;
 
+        #region Setup
+
         [SetUp]
         public void Setup()
         {
             questionService = new QuestionService();
         }
+
+        #endregion Setup
+
+        #region Exception Tests
 
         [Test]
         public void ExecuteQuestion_UnknownQuestionNumber_ThrowsQuestionNotFoundException()
@@ -41,5 +49,25 @@ namespace LeetCodeSolutionsTest
             // Act + Assert
             Assert.Throws<NotImplementedException>(() => questionService.ExecuteQuestion(questionNumber));
         }
+
+        #endregion Exception Tests
+
+        #region Easy Questions
+
+        [Test]
+        public void ExecuteQuestion_Q2331_ReturnsSuccessResult()
+        {
+            // Arrange
+            int questionNumber = 2331;
+
+            // Act
+            IResult result = questionService.ExecuteQuestion(questionNumber);
+
+            // Assert
+            Assert.IsInstanceOf<SuccessResult>(result);
+            Assert.That(result.Status, Is.EqualTo(ResultStatus.Passed));
+        }
+
+        #endregion Easy Questions
     }
 }

@@ -17,6 +17,7 @@ namespace LeetCodeSolutions.Questions.Easy
             public TreeNode left;
             public TreeNode right;
 #pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
+
             public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
 #pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
             {
@@ -38,7 +39,7 @@ namespace LeetCodeSolutions.Questions.Easy
         {
             TreeNode node = new TreeNode(2, new TreeNode(1), new TreeNode(3, new TreeNode(0), new TreeNode(1)));
             bool output = EvaluateTree(node);
-            if (output == true)
+            if (output)
                 return new SuccessResult();
             else
                 return new ErrorResult("Expected True. But was False.");
@@ -57,4 +58,3 @@ namespace LeetCodeSolutions.Questions.Easy
         }
     }
 }
-
