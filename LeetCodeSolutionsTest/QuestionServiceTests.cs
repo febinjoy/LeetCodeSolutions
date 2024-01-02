@@ -54,12 +54,31 @@ namespace LeetCodeSolutionsTest
 
         #region Easy Questions
 
-        [Test]
-        public void ExecuteQuestion_Q2331_ReturnsSuccessResult()
+        [TestCase(2331)]
+        [TestCase(26)]
+        [TestCase(2974)]
+        [TestCase(35)]
+        [TestCase(58)]
+        [TestCase(9)]
+        public void ExecuteQuestion_EasyQuestion_ReturnsSuccessResult(int questionNumber)
         {
-            // Arrange
-            int questionNumber = 2331;
+            ExecuteQuestionAndAssert(questionNumber);
+        }
 
+        #endregion Easy Questions
+
+        #region Medium Questions
+
+        [TestCase(2)]
+        public void ExecuteQuestion_MediumQuestion_ReturnsSuccessResult(int questionNumber)
+        {
+            ExecuteQuestionAndAssert(questionNumber);
+        }
+
+        #endregion Medium Questions
+
+        private void ExecuteQuestionAndAssert(int questionNumber)
+        {
             // Act
             IResult result = questionService.ExecuteQuestion(questionNumber);
 
@@ -67,7 +86,5 @@ namespace LeetCodeSolutionsTest
             Assert.IsInstanceOf<SuccessResult>(result);
             Assert.That(result.Status, Is.EqualTo(ResultStatus.Passed));
         }
-
-        #endregion Easy Questions
     }
 }
