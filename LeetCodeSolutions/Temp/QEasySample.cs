@@ -3,7 +3,7 @@ using LeetCodeSolutions.Interfaces;
 
 namespace LeetCodeSolutions.Questions.Easy
 {
-    internal class QEasySample : IQuestion
+    public class QEasySample : IQuestion
     {
         public int QuestionNumber { get; private set; }
         public string QuestionText { get; private set; }
@@ -24,4 +24,3 @@ namespace LeetCodeSolutions.Questions.Easy
         }
     }
 }
-
