@@ -1,3 +1,3 @@
 # LeetCodeSolutions
 
-Solutions to LeetCode problems done by Febin
+Solutions to LeetCode problems
