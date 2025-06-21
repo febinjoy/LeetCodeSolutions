@@ -1,7 +1,5 @@
 namespace LeetCodeSolutions.Exceptions
 {
-    public class DuplicateQuestionException : Exception
-    {
-        public DuplicateQuestionException(int questionNumber) : base($"Question {questionNumber} is found more than once.") { }
-    }
+    public class DuplicateQuestionException(int questionNumber)
+        : Exception($"Question {questionNumber} is found more than once.");
 }

@@ -1,7 +1,4 @@
 namespace LeetCodeSolutions.Exceptions
 {
-    public class QuestionNotFoundException : Exception
-    {
-        public QuestionNotFoundException(int questionNumber) : base($"Question {questionNumber} not found.") { }
-    }
+    public class QuestionNotFoundException(int questionNumber) : Exception($"Question {questionNumber} not found.");
 }

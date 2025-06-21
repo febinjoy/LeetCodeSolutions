@@ -6,12 +6,7 @@ namespace LeetCodeSolutions
 {
     public class QuestionService
     {
-        private readonly IQuestionFactory _questionFactory;
-
-        public QuestionService()
-        {
-            _questionFactory = new QuestionFactory();
-        }
+        private readonly IQuestionFactory _questionFactory = new QuestionFactory();
 
         public IResult ExecuteQuestion(int questionNumber)
         {
