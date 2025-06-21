@@ -6,6 +6,7 @@ using LeetCodeSolutions.Interfaces;
 using LeetCodeSolutions.Questions.Easy;
 using NSubstitute;
 using NSubstitute.ExceptionExtensions;
+using NUnit.Framework.Legacy;
 
 namespace LeetCodeSolutionsTest
 {
@@ -83,7 +84,7 @@ namespace LeetCodeSolutionsTest
             IResult result = questionService.ExecuteQuestion(questionNumber);
 
             // Assert
-            Assert.IsInstanceOf<SuccessResult>(result);
+            ClassicAssert.IsInstanceOf<SuccessResult>(result);
             Assert.That(result.Status, Is.EqualTo(ResultStatus.Passed));
         }
     }
