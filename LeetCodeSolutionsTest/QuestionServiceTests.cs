@@ -12,14 +12,14 @@ namespace LeetCodeSolutionsTest
 {
     public class QuestionServiceTests
     {
-        private QuestionService questionService;
+        private QuestionService _questionService;
 
         #region Setup
 
         [SetUp]
         public void Setup()
         {
-            questionService = new QuestionService();
+            _questionService = new QuestionService();
         }
 
         #endregion Setup
@@ -33,7 +33,7 @@ namespace LeetCodeSolutionsTest
             int questionNumber = 99999999;
 
             // Act + Assert
-            Assert.Throws<QuestionNotFoundException>(() => questionService.ExecuteQuestion(questionNumber));
+            Assert.Throws<QuestionNotFoundException>(() => _questionService.ExecuteQuestion(questionNumber));
         }
 
         [Test]
@@ -48,7 +48,7 @@ namespace LeetCodeSolutionsTest
             mockQuestion.Execute().Throws(new NotImplementedException());
 
             // Act + Assert
-            Assert.Throws<NotImplementedException>(() => questionService.ExecuteQuestion(questionNumber));
+            Assert.Throws<NotImplementedException>(() => _questionService.ExecuteQuestion(questionNumber));
         }
 
         #endregion Exception Tests
@@ -81,7 +81,7 @@ namespace LeetCodeSolutionsTest
         private void ExecuteQuestionAndAssert(int questionNumber)
         {
             // Act
-            IResult result = questionService.ExecuteQuestion(questionNumber);
+            IResult result = _questionService.ExecuteQuestion(questionNumber);
 
             // Assert
             ClassicAssert.IsInstanceOf<SuccessResult>(result);
