@@ -6,10 +6,10 @@ namespace LeetCodeSolutions.Classes
 {
     public class QuestionFactory : IQuestionFactory
     {
-        Dictionary<int, IQuestion> questions;
+        readonly Dictionary<int, IQuestion> _questions;
         public QuestionFactory()
         {
-            questions = new Dictionary<int, IQuestion>();
+            _questions = new Dictionary<int, IQuestion>();
 
             // Load all classes that implement IQuestion to the Dictionary
             var instances = from t in Assembly.GetExecutingAssembly().GetTypes()
@@ -21,18 +21,18 @@ namespace LeetCodeSolutions.Classes
             // TODO: Use LINQ and improve this.
             foreach (var question in instances)
             {
-                if (questions.ContainsKey(question.QuestionNumber))
+                if (_questions.ContainsKey(question.QuestionNumber))
                     throw new DuplicateQuestionException(question.QuestionNumber);
 
-                questions.Add(question.QuestionNumber, question);
+                _questions.Add(question.QuestionNumber, question);
             }
         }
 
         public IQuestion GetQuestionByNumber(int number)
         {
-            if (questions.ContainsKey(number) == false) throw new QuestionNotFoundException(number);
+            if (_questions.ContainsKey(number) == false) throw new QuestionNotFoundException(number);
 
-            return questions[number];
+            return _questions[number];
         }
     }
 }
