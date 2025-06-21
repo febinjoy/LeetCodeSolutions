@@ -3,19 +3,13 @@ using LeetCodeSolutions.Interfaces;
 
 namespace LeetCodeSolutions.Classes
 {
-    public class SuccessResult : IResult
+    public class SuccessResult(string message) : IResult
     {
         public ResultStatus Status { get; private set; } = ResultStatus.Passed;
-        public string Message { get; private set; }
+        public string Message { get; private set; } = message;
 
-        public SuccessResult()
+        public SuccessResult() : this(string.Empty)
         {
-            Message = string.Empty;
-        }
-
-        public SuccessResult(string message)
-        {
-            Message = message;
         }
     }
 }
