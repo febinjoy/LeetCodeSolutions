@@ -21,18 +21,16 @@ namespace LeetCodeSolutions.Classes
             // TODO: Use LINQ and improve this.
             foreach (var question in instances)
             {
-                if (_questions.ContainsKey(question.QuestionNumber))
+                if (!_questions.TryAdd(question.QuestionNumber, question))
                     throw new DuplicateQuestionException(question.QuestionNumber);
-
-                _questions.Add(question.QuestionNumber, question);
             }
         }
 
         public IQuestion GetQuestionByNumber(int number)
         {
-            if (_questions.ContainsKey(number) == false) throw new QuestionNotFoundException(number);
+            if (_questions.TryGetValue(number, out var byNumber) == false) throw new QuestionNotFoundException(number);
 
-            return _questions[number];
+            return byNumber;
         }
     }
 }
